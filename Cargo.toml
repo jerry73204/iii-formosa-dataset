@@ -1,0 +1,29 @@
+[package]
+name = "iii-formosa-dataset"
+version = "0.1.0"
+authors = ["jerry73204 <jerry73204@gmail.com>"]
+edition = "2018"
+
+description = "Se/Deserialization toolkit for Formosa dataset from Institute for the Information Industry"
+# homepage = "https://github.com/jerry73204/voc-dataset-rs"
+# repository = "https://github.com/jerry73204/voc-dataset-rs"
+# documentation = "https://docs.rs/voc-dataset/"
+keywords = ["dataset"]
+categories = ["science"]
+# license = "MIT"
+# readme = "README.md"
+
+[dependencies]
+log = "0.4.14"
+anyhow = "1.0.38"
+thiserror = "1.0.23"
+serde-xml-rs = "0.4.1"
+serde = { version = "1.0.123", features = ["derive"] }
+noisy_float = { version = "0.1.13", features = ["serde-1"] }
+
+[dev-dependencies]
+# pretty_env_logger = "0.4.0"
+# tempdir = "0.3.7"
+# reqwest = { version = "0.11.0", features = ["blocking"] }
+# rust-crypto = "0.2.36"
+# tar = "0.4.32"
