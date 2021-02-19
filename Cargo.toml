@@ -5,13 +5,13 @@ authors = ["jerry73204 <jerry73204@gmail.com>"]
 edition = "2018"
 
 description = "Se/Deserialization toolkit for Formosa dataset from Institute for the Information Industry"
-# homepage = "https://github.com/jerry73204/voc-dataset-rs"
-# repository = "https://github.com/jerry73204/voc-dataset-rs"
-# documentation = "https://docs.rs/voc-dataset/"
+homepage = "https://github.com/jerry73204/iii-formosa-dataset"
+repository = "https://github.com/jerry73204/iii-formosa-dataset"
+documentation = "https://docs.rs/iii-formosa-dataset/"
 keywords = ["dataset"]
 categories = ["science"]
-# license = "MIT"
-# readme = "README.md"
+license-file = "LICENSE.txt"
+readme = "README.md"
 
 [dependencies]
 log = "0.4.14"
