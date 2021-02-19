@@ -1,9 +1,9 @@
 # rust
+**/*.rs.bk
+/Cargo.lock
 /target
-Cargo.lock
 
 # editor
 *~
 .*~
 *.swp
-*.swo
