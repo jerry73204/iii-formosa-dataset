@@ -1,12 +1,12 @@
 use crate::common::*;
 
 /// Correspond to <pose> in annotation XML.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[derive(Debug, Clone, Copy, PartialOrd, Ord, PartialEq, Eq, Hash, Serialize, Deserialize)]
 #[serde(rename = "pose")]
 pub enum Pose {
     Frontal,
-    Rear,
     Left,
+    Rear,
     Right,
     Unspecified,
 }
@@ -39,19 +39,18 @@ pub struct Point {
 }
 
 /// Correspond to <weather> in annotation XML.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[derive(Debug, Clone, Copy, PartialOrd, Ord, PartialEq, Eq, Hash, Serialize, Deserialize)]
 #[serde(rename = "weather")]
 pub enum Weather {
-    Shadow,
     Cloudy,
     Overexposure,
     Rain,
-    ShadowShadow,
+    Shadow,
     Sun,
 }
 
 /// Correspond to <time> in annotation XML.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[derive(Debug, Clone, Copy, PartialOrd, Ord, PartialEq, Eq, Hash, Serialize, Deserialize)]
 #[serde(rename = "time")]
 pub enum Time {
     Day,
@@ -60,7 +59,7 @@ pub enum Time {
 }
 
 /// Correspond to <road> in annotation XML.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[derive(Debug, Clone, Copy, PartialOrd, Ord, PartialEq, Eq, Hash, Serialize, Deserialize)]
 #[serde(rename = "road")]
 pub enum Road {
     Alley,
@@ -81,11 +80,6 @@ pub struct Object {
     pub weather: Weather,
     pub time: Time,
     pub road: Road,
-    /* pub actions: Option<Actions>,
-     * #[serde(skip_serializing_if = "Vec::is_empty", default)]
-     * pub part: Vec<Part>,
-     * pub occluded: Option<bool>,
-     * pub point: Option<Point>, */
 }
 
 /// Correspond to <part> in annotation XML.
@@ -114,21 +108,6 @@ pub struct Annotation {
     #[serde(skip_serializing_if = "Vec::is_empty", default)]
     pub object: Vec<Object>,
     pub segmented: bool,
-    // pub segmented: Option<bool>,
     pub size: Size,
     pub source: Source,
 }
-
-// #[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
-// #[serde(rename = "actions")]
-// pub struct Actions {
-//     pub jumping: bool,
-//     pub other: bool,
-//     pub phoning: bool,
-//     pub playinginstrument: bool,
-//     pub reading: bool,
-//     pub ridinghorse: bool,
-//     pub running: bool,
-//     pub takingphoto: bool,
-//     pub walking: bool,
-// }
